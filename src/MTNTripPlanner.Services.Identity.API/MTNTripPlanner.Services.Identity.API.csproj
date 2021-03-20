@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Convey" Version="0.4.403" />
+    <PackageReference Include="Convey.WebApi" Version="0.4.403" />
+    <PackageReference Include="Convey.WebApi.CQRS" Version="0.4.403" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\MTNTripPlanner.Services.Identity.Infrastructure\MTNTripPlanner.Services.Identity.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

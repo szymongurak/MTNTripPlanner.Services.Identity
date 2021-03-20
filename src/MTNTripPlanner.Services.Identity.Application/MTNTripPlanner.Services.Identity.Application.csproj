@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\MTNTripPlanner.Services.Identity.Core\MTNTripPlanner.Services.Identity.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Convey" Version="0.4.403" />
+      <PackageReference Include="Convey.CQRS.Commands" Version="0.4.403" />
+      <PackageReference Include="Convey.CQRS.Events" Version="0.4.403" />
+    </ItemGroup>
+
+</Project>
