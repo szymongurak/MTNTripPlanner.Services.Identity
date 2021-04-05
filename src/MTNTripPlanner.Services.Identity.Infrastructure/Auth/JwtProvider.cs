@@ -25,6 +25,9 @@ namespace MTNTripPlanner.Services.Identity.Infrastructure.Auth
                 Role = jwt.Role,
                 Expires = jwt.Expires
                 
+                
+                
+                
             };
         }
     }

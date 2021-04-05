@@ -37,9 +37,11 @@ namespace MTNTripPlanner.Services.Identity.Application.Services.Identity
         }
         
         
-        public Task<UserDto> GetAsync(Guid id)
+        public async Task<UserDto> GetAsync(Guid id)
         {
-            throw new NotImplementedException();
+            var user = await _userRepository.GetAsync(id);
+
+            return user is null ? null : new UserDto(user);
         }
 
         public async Task<AuthDto> SignInAsync(SignIn command)

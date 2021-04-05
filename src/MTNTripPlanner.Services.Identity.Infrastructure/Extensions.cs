@@ -1,8 +1,12 @@
 using System;
+using System.Threading.Tasks;
 using Convey;
 using Convey.Auth;
 using Convey.Persistence.MongoDB;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using MTNTripPlanner.Services.Identity.Application.Services;
@@ -42,6 +46,13 @@ namespace MTNTripPlanner.Services.Identity.Infrastructure
             app.UseMongo();
             
             return app;
+        }
+        
+        public static async Task<Guid> AuthenticateUsingJwtAsync(this HttpContext context)
+        {
+            var authentication = await context.AuthenticateAsync(JwtBearerDefaults.AuthenticationScheme);
+
+            return authentication.Succeeded ? Guid.Parse(authentication.Principal.Identity.Name) : Guid.Empty;
         }
     }
 }
